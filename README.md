@@ -48,6 +48,22 @@ python3 -m http.server 8123
 
 ---
 
+## Everyday updates (SSH)
+
+The local clone pushes over SSH (`git@github.com:helenxu/helenxu.github.io.git`),
+so no personal access token is needed:
+
+```bash
+cd <this folder>
+git add -A
+git commit -m "describe the change"
+git push origin main:master     # local branch is main, remote branch is master
+```
+
+GitHub Pages rebuilds automatically; the site updates in roughly 1 minute.
+
+---
+
 ## Deploy to GitHub Pages (first time)
 
 This site is deployed from **helenxu/helenxu.github.io**, branch `master`,
