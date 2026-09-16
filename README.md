@@ -2,7 +2,12 @@
 
 Personal academic website (static HTML/CSS/JS), deployed via GitHub Pages.
 
-**Live site:** https://helenxu.github.io (after you create the `helenxu.github.io` repository)
+**Live site:** https://helenxu.github.io/congxu.github.io/
+
+> Note: the repository is `congxu.github.io` under the **helenxu** account, so GitHub
+> treats it as a *project* site and serves it at `/congxu.github.io/`. To get the
+> shorter `https://helenxu.github.io/` URL, either rename the repo to
+> `helenxu.github.io`, or add a custom domain (see below).
 
 ---
 
@@ -46,8 +51,10 @@ python3 -m http.server 8123
 
 ## Deploy to GitHub Pages (first time)
 
-1. Create a new **public** repository named exactly `helenxu.github.io`
-   (GitHub Pages user sites must use the `<username>.github.io` name).
+This site is already deployed from **helenxu/congxu.github.io**, branch `master`,
+folder `/ (root)`. Pages is enabled and building. To redeploy elsewhere:
+
+1. Create a new **public** repository.
 2. Push this folder as the repository root:
 
 ```bash
@@ -55,23 +62,25 @@ git init
 git add .
 git commit -m "Initial commit: academic homepage"
 git branch -M main
-git remote add origin https://github.com/helenxu/helenxu.github.io.git
+git remote add origin https://github.com/<user>/<repo>.git
 git push -u origin main
 ```
 
 3. In the repository: **Settings → Pages → Build and deployment**
    → Source: *Deploy from a branch* → Branch: `main`, folder: `/ (root)` → Save.
-4. Wait 1–2 minutes, then open https://helenxu.github.io.
+4. Wait 1–2 minutes, then open the Pages URL shown in Settings.
 
 > The `.nojekyll` file is important: it stops GitHub from running Jekyll on upload,
 > so the site is served byte-for-byte as you see it locally.
 
-### Using a project site instead?
+### Custom domain (optional)
 
-If you put this site in a repository with another name (e.g. `homepage`),
-the URL becomes `https://helenxu.github.io/homepage/`.
-In that case add `{{ site.baseurl }}`-style prefixes — or simply keep all links
-relative, as they are now, and it will still work.
+To serve at a short URL such as `congxu.org`:
+
+1. Put the domain in a file named `CNAME` at the repository root (one line, no `http://`).
+2. Add a `CNAME` DNS record at your registrar pointing to `helenxu.github.io`.
+3. In **Settings → Pages → Custom domain**, enter the domain and enable
+   *Enforce HTTPS* once the certificate is issued.
 
 ---
 
