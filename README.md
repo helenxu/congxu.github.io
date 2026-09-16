@@ -2,12 +2,11 @@
 
 Personal academic website (static HTML/CSS/JS), deployed via GitHub Pages.
 
-**Live site:** https://helenxu.github.io/congxu.github.io/
+**Live site:** https://helenxu.github.io/
 
-> Note: the repository is `congxu.github.io` under the **helenxu** account, so GitHub
-> treats it as a *project* site and serves it at `/congxu.github.io/`. To get the
-> shorter `https://helenxu.github.io/` URL, either rename the repo to
-> `helenxu.github.io`, or add a custom domain (see below).
+The site lives in the `helenxu.github.io` repository on the **helenxu** account —
+because the repository name matches the account login, GitHub Pages serves it as a
+*user site* at the root URL (no `/repo` sub-path).
 
 ---
 
@@ -51,8 +50,9 @@ python3 -m http.server 8123
 
 ## Deploy to GitHub Pages (first time)
 
-This site is already deployed from **helenxu/congxu.github.io**, branch `master`,
-folder `/ (root)`. Pages is enabled and building. To redeploy elsewhere:
+This site is deployed from **helenxu/helenxu.github.io**, branch `master`,
+folder `/ (root)` — a GitHub Pages *user site*, served at https://helenxu.github.io/.
+To redeploy elsewhere:
 
 1. Create a new **public** repository.
 2. Push this folder as the repository root:
