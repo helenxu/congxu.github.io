@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teaching — Cong Xu</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:300,400,500,700&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ============ 导航栏 ============ -->
+  <nav class="site-nav">
+    <div class="nav-container">
+      <a class="nav-brand" href="index.html">Cong Xu's Homepage</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Homepage</a></li>
+        <li><a href="teaching.html" class="active">Teaching</a></li>
+        <li><a href="cv.html">CV</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ============ 主内容 ============ -->
+  <main class="page-content">
+    <div class="container">
+
+      <h1 class="page-title">Teaching</h1>
+      <p class="page-subtitle">My Teaching</p>
+
+      <div class="section-divider">
+        <span class="watermark">teaching</span>
+      </div>
+
+      <!-- ============ 课程卡片网格 ============ -->
+      <div class="course-grid">
+
+        <!-- 课程卡片：点进卡片进入课程详情页。
+             若要用教材封面图，把下面 <div class="cover-placeholder ..."> 替换成
+             <img src="teaching/img/xxx.jpg" alt="教材封面"> 即可。 -->
+        <a class="course-card" href="teaching/course-sta219.html">
+          <div class="course-cover">
+            <img src="teaching/img/sta219-cover.jpg" alt="Baron, Probability and Statistics for Computer Scientists, 3rd ed.">
+          </div>
+          <div class="course-card-body">
+            <h3 class="course-code">STA219</h3>
+            <p class="course-name">Probability and Statistics for Engineering</p>
+            <p class="course-level">Undergraduate course</p>
+          </div>
+        </a>
+
+        <a class="course-card" href="teaching/course-ma405.html">
+          <div class="course-cover">
+            <img src="teaching/img/ma405-cover.jpg" alt="Collett, Modelling Survival Data in Medical Research, 4th ed.">
+          </div>
+          <div class="course-card-body">
+            <h3 class="course-code">MA405</h3>
+            <p class="course-name">Survival Analysis</p>
+            <p class="course-level">Undergraduate / Graduate course</p>
+          </div>
+        </a>
+
+        <!-- 新增课程：复制下面一整块，改课程号、名称、链接和详情页即可
+        <a class="course-card" href="teaching/course-XXX.html">
+          <div class="course-cover">
+            <div class="cover-placeholder cover-blue">XXX</div>
+          </div>
+          <div class="course-card-body">
+            <h3 class="course-code">XXX</h3>
+            <p class="course-name">Course Title</p>
+            <p class="course-level">Undergraduate course</p>
+          </div>
+        </a>
+        -->
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ============ 页脚 ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-links">
+        <a href="https://scholar.google.com/citations?user=wXfyWHMAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a> &nbsp;·&nbsp;
+        <a href="https://orcid.org/0000-0002-8047-0488" target="_blank" rel="noopener">ORCID</a> &nbsp;·&nbsp;
+        <a href="http://github.com/helenxu" target="_blank" rel="noopener">GitHub</a>
+      </p>
+      <p>© 2026 Cong Xu · Last updated: Sep 2026</p>
+      <p class="footer-powered">Powered by Jekyll with al-folio theme. Hosted by GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

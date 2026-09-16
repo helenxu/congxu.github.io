@@ -1,0 +1,8 @@
+.DS_Store
+._*
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+__pycache__/
+.ipynb_checkpoints/
