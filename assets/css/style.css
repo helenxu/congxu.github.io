@@ -282,6 +282,16 @@ hr { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0; }
 
 .hint { color: var(--text-muted); font-size: 0.92rem; }
 
+/* Notebook / 课件条目的辅助链接组（查看 · 下载 · Colab） */
+.nb-links {
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+.nb-links a { margin: 0 0.1rem; }
+.section ol li { margin-bottom: 0.7rem; }
+
 .textbook-list { padding-left: 1.2rem; }
 
 /* 课件 / Notebook 文件表格 */

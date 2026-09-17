@@ -109,8 +109,44 @@ To serve at a short URL such as `congxu.org`:
 | CV | edit `cv.html`; replace `assets/cv/cv.pdf` for the downloadable version |
 | Add a course | copy the commented card block in `teaching.html`, then copy any file in `teaching/` as the new course page |
 | Add slides | drop PDFs into `teaching/slides/<course>/`, then add `<li>` links in the course page |
-| Add notebooks | drop `.ipynb` into `teaching/notebooks/<course>/`, then add `<li>` links |
+| Add notebooks | drop `.ipynb` into `teaching/notebooks/<course>/`, convert to HTML (see below), then add `<li>` links |
 | Course cover image | put the image in `teaching/img/` and replace the `<img src>` in the card |
+
+### Notebooks: why HTML as well as `.ipynb`
+
+GitHub Pages serves `.ipynb` as `text/plain`, so clicking one shows raw JSON.
+Each notebook therefore has a rendered `.html` next to it — that is what the
+"查看" link points to. Regenerate after editing a notebook:
+
+```bash
+pip install nbconvert jupyterlab_pygments
+python - << 'EOF'
+import glob, os, re
+from nbconvert import HTMLExporter
+import nbformat
+
+NB_DIR = "teaching/notebooks/sta219"          # change per course
+BACK = "../../course-sta219.html"             # relative link back to the course page
+BANNER = ('<div style="max-width:960px;margin:0 auto;padding:10px 16px;'
+          'font-family:Roboto,sans-serif;font-size:14px;'
+          'border-bottom:1px solid rgba(0,0,0,.1);">'
+          f'<a href="{BACK}" style="color:#b509ac;text-decoration:none;">'
+          '&larr; 返回课程页 / Back to course page</a></div>')
+
+exporter = HTMLExporter(template_name="lab")
+for path in sorted(glob.glob(os.path.join(NB_DIR, "*.ipynb"))):
+    nb = nbformat.read(path, as_version=4)
+    body, _ = exporter.from_notebook_node(nb)
+    body = re.sub(r"(<body[^>]*>)", r"\1" + BANNER, body, count=1)
+    out = os.path.splitext(path)[0] + ".html"
+    open(out, "w", encoding="utf-8").write(body)
+    print("wrote", out)
+EOF
+```
+
+The exported HTML embeds all figures as base64, so it is fully self-contained.
+Each entry also offers a **下载** link (the original `.ipynb`) and a **Colab** link
+that opens it directly in Google Colab.
 
 ### Keeping files small
 
